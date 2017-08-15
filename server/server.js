@@ -11,14 +11,14 @@ app.use(bodyParser.json());
 
 app.post('/todos',(req,res)=>{
 
-    console.log('receiving post');
+    //console.log('receiving post');
 
     var todo = new Todo({
         text : req.body.text
     });
 
     todo.save().then((doc)=>{
-        console.log('todo saved')
+        //console.log('todo saved')
         res.send(doc);
     },(e)=>{
         res.status(400).send(e);
